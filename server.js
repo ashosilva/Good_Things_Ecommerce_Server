@@ -4,6 +4,8 @@ const connectDatabase = require('./config/database')
 // const dotenv = require('dotenv')
 const cloudinary = require('cloudinary')
 
+
+
 // Handle uncaught exceptions
 process.on('uncaughtException', err => {
     console.log(`ERROR: ${err.message}`)
@@ -25,8 +27,13 @@ cloudinary.config({
 
 })
 
-const server = app.listen(process.env.PORT, () => {
-    console.log(`Server started on PORT: ${process.env.PORT} in ${process.env.NODE_ENV} mode.`)
+
+const express = require("express");
+const app = express();
+const PORT = process.env.PORT || 3030;
+
+const server = app.listen(PORT, () => {
+    console.log(`Server started on PORT: ${PORT} in ${process.env.NODE_ENV} mode.`)
 })
 
 // Handle Unhandled Promise Rejections
