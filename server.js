@@ -15,7 +15,7 @@ process.on('uncaughtException', err => {
 })
 
 // Setting up config file
-if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'config.env' })
+if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'onfig.env' })
 console.log(`${process.env.NODE_ENV} server `);
 
 // Connecting to database
