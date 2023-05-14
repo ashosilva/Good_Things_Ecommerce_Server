@@ -28,12 +28,12 @@ cloudinary.config({
 })
 
 
-const express = require("express");
-const app = express();
-const PORT = process.env.PORT || 3030;
+// const express = require("express");
+// const app = express();
+//const PORT =  || 3030;
 
-const server = app.listen(PORT, () => {
-    console.log(`Server started on PORT: ${PORT} in ${process.env.NODE_ENV} mode.`)
+const server = app.listen(process.env.PORT, () => {
+    console.log(`Server started on PORT: ${process.env.PORT} in ${process.env.NODE_ENV} mode.`)
 })
 
 // Handle Unhandled Promise Rejections
