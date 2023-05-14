@@ -4,6 +4,7 @@ const app = require('./app')
 //const dotenv = require('dotenv')
 const cloudinary = require('cloudinary')
 
+const connectDatabase = require('./config/database')
 
 
 // Handle uncaught exceptions
@@ -14,9 +15,8 @@ process.on('uncaughtException', err => {
 })
 
 // Setting up config file
-if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'backend/config/config.env' })
-
-const connectDatabase = require('./config/database')
+if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: 'config.env' })
+console.log(`${process.env.NODE_ENV} server `);
 
 // Connecting to database
 connectDatabase()
@@ -36,7 +36,7 @@ const PORT = process.env.PORT;
 
 const server = app.listen(PORT, () => {
     console.log(`Server started on PORT: ${PORT} in ${process.env.NODE_ENV} mode.`)
-    console.log(process.env.NODE_ENV);
+
 })
 
 //
